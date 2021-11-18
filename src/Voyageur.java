@@ -23,9 +23,9 @@ public class Voyageur extends Thread {
 	    //Se rendre à l'arrêt
 	    try {Thread.sleep(Voyageur.N);} catch (InterruptedException e) {e.printStackTrace();}
 	    //attendre le bus
-	    arret.attendreBus();
+	     //arret.attendreBus();
 	    //monter dans le bus
-	    arret.monterBus();
+	     arret.monterBus();
      }
 
 	@Override
