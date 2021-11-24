@@ -1,3 +1,5 @@
+package istic.csr.tp5.dao;
+
 public class Billeterie {
 
     private int nBilletsVendus = 0;

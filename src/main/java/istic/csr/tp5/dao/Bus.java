@@ -1,32 +1,39 @@
+package istic.csr.tp5.dao;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Bus extends Thread {
-    static int CAPACITY = 15;
+    public static int CAPACITY = 15;
     static int VOYAGE = 1000;
     static int STATIONNEMENT = 1000;
+
+    private final Arret arret;
+    private Collection<Voyageur> passagers;
     private int nbPassagers = 0;
-    private Arret arret;
-    private int nbBus = 0;
+    private int id_;
 
     /**
      * @param arret
      */
-    public Bus(int nbBus, Arret arret) {
+    public Bus(Arret arret) {
         super();
-        this.nbBus = nbBus;
+        passagers = new ArrayList<>();
         this.arret = arret;
     }
 
     /**
      * @return the nbBus
      */
-    public int getNbBus() {
-        return nbBus;
+    public int getId_() {
+        return id_;
     }
 
     /**
-     * @param nbBus the nbBus to set
+     * @param id_ the nbBus to set
      */
-    public void setNbBus(int nbBus) {
-        this.nbBus = nbBus;
+    public void setId_(int id_) {
+        this.id_ = id_;
     }
 
     /**
@@ -40,8 +47,13 @@ public class Bus extends Thread {
         this.nbPassagers = 0;
     }
 
-    public void monter() {
+    public void monter(Voyageur voyageur) {
         nbPassagers++;
+        this.passagers.add(voyageur);
+    }
+
+    public Collection<Voyageur> getPassagers() {
+        return passagers;
     }
 
     @Override
@@ -67,12 +79,5 @@ public class Bus extends Thread {
             viderBus();
         }
     }
-
-    @Override
-    public String toString() {
-        return "Bus " + nbBus;
-    }
-
-
 
 }
