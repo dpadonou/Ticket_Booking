@@ -26,8 +26,8 @@ public class SingleVoyageurRessource extends ServerResource {
         JSONObject vObject = new JSONObject();
         if (voyageur != null) {
             vObject.put("Id", voyageur.getId_());
-            vObject.put("Nom", voyageur.getName());
-            vObject.put("Current bus", new JSONObject(voyageur.getBus()));
+            vObject.put("Nom", voyageur.getVoyageurName());
+            vObject.put("url", getReference() + "/" + voyageur.getId_());
         } else {
             vObject.put("Message", "Aucun voyageur portant ce identifiant n'a été retrouvé.");
         }

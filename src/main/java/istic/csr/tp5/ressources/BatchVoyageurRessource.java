@@ -34,7 +34,7 @@ public class BatchVoyageurRessource extends ServerResource {
 
         JSONObject msg = new JSONObject().put("Resultat", voyageurs.length() + " voyageurs ajoutés.");
         objectCollection.add(msg);
-        JSONObject voyageur_ = new JSONObject();
+        JSONObject voyageur_;
         for (int i = 0; i < voyageurs.length(); i++) {
             voyageur_ = voyageurs.getJSONObject(i);
             String name = voyageur_.getString("name");

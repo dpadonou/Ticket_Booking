@@ -1,15 +1,13 @@
 package istic.csr.tp5.dao;
 
-import java.time.LocalDateTime;
-
 public class Voyageur extends Thread {
     static int N = 1000;
     private int id_;
-    private String name;
+    private String voyageurName;
 
     private final Billeterie billeterie;
     private final Arret arret;
-    private Bus bus = null;
+//    private Bus bus = null;
 
     /**
      * @param billeterie
@@ -17,7 +15,7 @@ public class Voyageur extends Thread {
      */
     public Voyageur(String name, Billeterie billeterie, Arret arret) {
         super();
-        this.name = name;
+        this.voyageurName = name;
         this.billeterie = billeterie;
         this.arret = arret;
     }
@@ -30,12 +28,8 @@ public class Voyageur extends Thread {
         return id_;
     }
 
-    public Bus getBus() {
-        return bus;
-    }
-
-    public void setBus(Bus bus) {
-        this.bus = bus;
+    public String getVoyageurName() {
+        return voyageurName;
     }
 
     @Override

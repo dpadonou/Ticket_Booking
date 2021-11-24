@@ -18,7 +18,7 @@ public class Arret {
         }
         busStationne = bus;
         isOccuped = true;
-        System.out.println("Le " + Thread.currentThread() + " est stationn� ");
+        System.out.println("Le bus " + busStationne.getId_() + " est stationné");
         this.notifyAll();
     }
 
@@ -27,8 +27,8 @@ public class Arret {
      */
     public synchronized void quitterArret() {
         isOccuped = false;
+        System.out.println("Le bus " + busStationne.getId_() + " est parti");
         busStationne = null;
-        System.out.println("Le " + Thread.currentThread() + " est parti ");
         this.notifyAll();
     }
 
@@ -43,8 +43,8 @@ public class Arret {
         }
 
         busStationne.monter(voyageur);
-        voyageur.setBus(busStationne);
-        System.out.println("Le " + Thread.currentThread() + " est monté dans le bus " + busStationne.getId_());
+        //voyageur.setBus(busStationne);
+        System.out.println("Le voyageur " + voyageur.getVoyageurName() + " est monté dans le bus " + busStationne.getId_());
         this.notifyAll();
     }
 }

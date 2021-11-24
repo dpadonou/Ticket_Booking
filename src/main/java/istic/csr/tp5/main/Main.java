@@ -15,9 +15,6 @@ public final class Main {
     }
 
     public static void main(String[] args) throws Exception{
-        //Création des Bus et des Arrêts puis en route des bus
-        new Reseau();
-
         // Create a component
         Component component = new Component();
         Context context = component.getContext().createChildContext();
@@ -33,6 +30,10 @@ public final class Main {
 
         // Start the component
         component.start();
+
+        //Création des Bus et des Arrêts puis en route des bus
+        new Reseau(backend);
+
     }
 
 }

@@ -5,10 +5,11 @@ import java.util.Collection;
 
 public class Bus extends Thread {
     public static int CAPACITY = 15;
-    static int VOYAGE = 1000;
+    static int VOYAGE = 20000;
     static int STATIONNEMENT = 1000;
 
     private final Arret arret;
+    //Nombre de passagers à l'intérieur du nbus à moment donné
     private Collection<Voyageur> passagers;
     private int nbPassagers = 0;
     private int id_;
@@ -45,6 +46,7 @@ public class Bus extends Thread {
 
     public void viderBus() {
         this.nbPassagers = 0;
+        this.passagers.clear();
     }
 
     public void monter(Voyageur voyageur) {

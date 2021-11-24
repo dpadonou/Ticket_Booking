@@ -19,6 +19,7 @@ public class BusDataStore {
         Bus bus = new Bus(arret);
         bus.setId_(identifier);
         busMap.put(identifier, bus);
+        bus.setDaemon(true);
         bus.start();
         identifier++;
         return bus;

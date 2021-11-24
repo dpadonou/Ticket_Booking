@@ -9,7 +9,7 @@ public class Billeterie {
      */
     public synchronized void prendreBillet() {
         nBilletsVendus++;
-        System.out.println("Nouveau billet vendu, Nombre de billets vendus: " + nBilletsVendus);
+        System.out.println("Nouveau billet vendu : Total vendus (" + nBilletsVendus +").");
     }
 
 }

@@ -34,8 +34,8 @@ public class VoyageurRessource extends ServerResource {
 
         JSONObject result = new JSONObject();
         result.put("Id", voyageur.getId_());
-        result.put("Nom", voyageur.getName());
-        result.put("Current bus", new JSONObject(voyageur.getBus()));
+        result.put("Nom", voyageur.getVoyageurName());
+        result.put("url", getReference() + "/" + voyageur.getId_());
 
         return new JsonRepresentation(result);
     }
@@ -46,12 +46,12 @@ public class VoyageurRessource extends ServerResource {
         Collection<JSONObject> jsonObjects = new ArrayList<JSONObject>();
 
         if(!voyageurs.isEmpty()){
-            JSONObject current = new JSONObject();
+
 
             for (Voyageur voyageur : voyageurs) {
+                JSONObject current = new JSONObject();
                 current.put("id", voyageur.getId_());
-                current.put("name", voyageur.getName());
-                current.put("Current bus", new JSONObject(voyageur.getBus()));
+                current.put("name", voyageur.getVoyageurName());
                 current.put("url", getReference() + "/" + voyageur.getId_());
                 jsonObjects.add(current);
             }
