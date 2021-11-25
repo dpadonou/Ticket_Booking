@@ -17,21 +17,21 @@ public class Bus extends Thread {
 	}
 	
 	/**
-	 * @return the nbBus
+	 * @return nbBus the bus number
 	 */
 	public int getNbBus() {
 		return nbBus;
 	}
 
 	/**
-	 * @param nbBus the nbBus to set
+	 * @param nbBus lthe bus number
 	 */
 	public void setNbBus(int nbBus) {
 		this.nbBus = nbBus;
 	}
 
 	/**
-	 * @return the nbPassagers
+	 * @return nbPassagers the number of the bus passager's
 	 */
 	public int getNbPassagers() {
 		return nbPassagers;
@@ -61,8 +61,6 @@ public class Bus extends Thread {
 			//vider le bus 
 			 viderBus();
 		}
-			
-		
 		
 	}
 	
