@@ -15,6 +15,9 @@ import org.restlet.resource.ServerResource;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Relatif au requêtes portants sur un voyageur unique
+ */
 public class VoyageurRessource extends ServerResource {
 
     private final Backend backend;
@@ -24,6 +27,11 @@ public class VoyageurRessource extends ServerResource {
         backend = (Backend) getApplication().getContext().getAttributes().get("backend");
     }
 
+    /**
+     * Ajouter un voyageur à la base de données
+     * @param representation : Description Json du voyageur à ajouter
+     * @return : Une description Json du voyageur ajouté, indiquant que l'opération s'est bien terminée
+     */
     @Post("json")
     public Representation addNew(JsonRepresentation representation) {
         JSONObject object = representation.getJsonObject();
@@ -40,14 +48,15 @@ public class VoyageurRessource extends ServerResource {
         return new JsonRepresentation(result);
     }
 
+    /**
+     * @return les caractéristiquues de tous les voyageurs enregistrés dans le système
+     */
     @Get("json")
     public Representation getAll() {
         Collection<Voyageur> voyageurs = backend.getVoyageursDataStore().getVoyageurs();
         Collection<JSONObject> jsonObjects = new ArrayList<JSONObject>();
 
         if(!voyageurs.isEmpty()){
-
-
             for (Voyageur voyageur : voyageurs) {
                 JSONObject current = new JSONObject();
                 current.put("id", voyageur.getId_());

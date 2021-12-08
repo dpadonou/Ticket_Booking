@@ -32,7 +32,6 @@ public class Arret {
         this.notifyAll();
     }
 
-
     public synchronized void monterBus(Voyageur voyageur) {
         while (busStationne == null || busStationne.getNbPassagers() >= Bus.CAPACITY) {
             try {

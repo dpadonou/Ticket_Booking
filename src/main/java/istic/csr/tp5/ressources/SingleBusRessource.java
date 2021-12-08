@@ -9,6 +9,9 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
+/**
+ * Relatif au requêtes portants sur un seul Bus
+ */
 public class SingleBusRessource extends ServerResource {
 
     private final Backend backend;
@@ -18,6 +21,10 @@ public class SingleBusRessource extends ServerResource {
         backend = (Backend) getApplication().getContext().getAttributes().get("backend");
     }
 
+    /**
+     * Récupérer un bus grâce à son identifiant
+     * @return les caractéristiques du bus dont l'ID est spécifier dans l'URL
+     */
     @Get("json")
     public Representation findById() {
         String idString = (String) getRequest().getAttributes().get("id");

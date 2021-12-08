@@ -15,14 +15,13 @@ public class BusDataStore {
         busMap = new HashMap<>();
     }
 
-    public synchronized Bus add(Arret arret) {
+    public synchronized void add(Arret arret) {
         Bus bus = new Bus(arret);
         bus.setId_(identifier);
         busMap.put(identifier, bus);
         bus.setDaemon(true);
         bus.start();
         identifier++;
-        return bus;
     }
 
     public Bus findById(int id) {

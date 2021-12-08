@@ -7,7 +7,11 @@ import org.restlet.Component;
 import org.restlet.Context;
 import org.restlet.data.Protocol;
 
-
+/**
+ * Entrée de l'application
+ * Déclare l'objet "backend" représentant la base de donnée sur laquelle les requettes seront lancées
+ * Initialise le réseau
+ */
 public final class Main {
 
     Main() {

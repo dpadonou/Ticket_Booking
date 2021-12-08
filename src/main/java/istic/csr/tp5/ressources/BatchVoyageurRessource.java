@@ -12,6 +12,9 @@ import org.restlet.resource.ServerResource;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Relatif aux ajouts mutiple de voyageurs
+ */
 public class BatchVoyageurRessource extends ServerResource {
 
     private final Backend backend_;
@@ -25,6 +28,11 @@ public class BatchVoyageurRessource extends ServerResource {
         backend_ = (Backend) getApplication().getContext().getAttributes().get("backend");
     }
 
+    /**
+     * Permet de faire l'ajout multiple de voyageurs
+     * @param representation Une représentation Json de chaque voyageur à ajpouter
+     * @return une représentation Json des voyageurs qui viennent d'être ajoutés
+     */
     @Post("json")
     public Representation addMany(JsonRepresentation representation){
         JSONObject objects = representation.getJsonObject();

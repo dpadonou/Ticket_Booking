@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Tp5_Csr" target="17" />
+      <module name="Tp5_Csr" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

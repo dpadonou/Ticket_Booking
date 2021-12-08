@@ -16,14 +16,13 @@ public class VoyageursDataStore {
         this.voyageurMap = new HashMap<>();
     }
 
-    public synchronized Voyageur add(String name, Billeterie billeterie, Arret arret){
+    public synchronized void add(String name, Billeterie billeterie, Arret arret){
         Voyageur voyageur = new Voyageur(name, billeterie, arret);
         voyageur.setId_(identifier);
         voyageurMap.put(identifier, voyageur);
         //Démarrer le nouveau voyageur
         voyageur.start();
         identifier++;
-        return voyageur;
     }
 
     public Collection<Voyageur> getVoyageurs() {
