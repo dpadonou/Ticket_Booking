@@ -3,6 +3,7 @@ package istic.csr.tp5.database;
 import istic.csr.tp5.dao.Arret;
 import istic.csr.tp5.dao.Bus;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,10 +22,11 @@ public class BusDataStore {
         busMap.put(identifier, bus);
         bus.setDaemon(true);
         bus.start();
+        System.out.println("Un bus lancé.");
         identifier++;
     }
 
-    public Bus findById(int id) {
-        return busMap.get(id);
+    public Collection<Bus> getAll() {
+        return busMap.values();
     }
 }

@@ -10,7 +10,7 @@ public class Bus extends Thread {
 
     private final Arret arret;
     //Nombre de passagers à l'intérieur du nbus à moment donné
-    private Collection<Voyageur> passagers;
+    private final Collection<Voyageur> passagers;
     private int nbPassagers = 0;
     private int id_;
 

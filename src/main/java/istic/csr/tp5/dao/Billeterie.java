@@ -7,9 +7,9 @@ public class Billeterie {
     /**
      * Incremente le nombre de billets vendus
      */
-    public synchronized void prendreBillet() {
+    public synchronized void prendreBillet(Voyageur v) {
         nBilletsVendus++;
-        System.out.println("Nouveau billet vendu : Total vendus (" + nBilletsVendus +").");
+        System.out.println("Nouveau billet vendu à "+ v.getVoyageurName() +" : Total vendus (" + nBilletsVendus +").");
     }
 
 }

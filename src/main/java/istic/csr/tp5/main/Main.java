@@ -32,12 +32,11 @@ public final class Main {
         context.getAttributes().put("backend", backend);
         component.getDefaultHost().attach(application);
 
-        // Start the component
-        component.start();
-
         //Création des Bus et des Arrêts puis en route des bus
         new Reseau(backend);
 
+        // Start the component
+        component.start();
     }
 
 }

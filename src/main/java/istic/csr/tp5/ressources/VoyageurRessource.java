@@ -35,10 +35,11 @@ public class VoyageurRessource extends ServerResource {
     @Post("json")
     public Representation addNew(JsonRepresentation representation) {
         JSONObject object = representation.getJsonObject();
-        String name = object.getString("nom");
+        String name = object.getString("name");
 
         //Save the voyageur
         Voyageur voyageur = new Voyageur(name, Reseau.BILLETERIE, Reseau.ARRET);
+        backend.getVoyageursDataStore().add(name, Reseau.BILLETERIE, Reseau.ARRET);
 
         JSONObject result = new JSONObject();
         result.put("Id", voyageur.getId_());

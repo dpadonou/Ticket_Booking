@@ -1,7 +1,7 @@
 package istic.csr.tp5.app;
 
 import istic.csr.tp5.ressources.BatchVoyageurRessource;
-import istic.csr.tp5.ressources.SingleBusRessource;
+import istic.csr.tp5.ressources.BusRessource;
 import istic.csr.tp5.ressources.SingleVoyageurRessource;
 import istic.csr.tp5.ressources.VoyageurRessource;
 import org.restlet.Application;
@@ -22,7 +22,7 @@ public class ApplicationEntry extends Application {
         router.attach("/voyageurs/many", BatchVoyageurRessource.class);
         router.attach("/voyageurs/{id}", SingleVoyageurRessource.class);
 
-        router.attach("/bus/{id}", SingleBusRessource.class);
+        router.attach("/bus", BusRessource.class);
         return router;
     }
 }

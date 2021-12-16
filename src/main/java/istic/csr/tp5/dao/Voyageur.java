@@ -3,15 +3,14 @@ package istic.csr.tp5.dao;
 public class Voyageur extends Thread {
     static int N = 1000;
     private int id_;
-    private String voyageurName;
+    private final String voyageurName;
 
     private final Billeterie billeterie;
     private final Arret arret;
-//    private Bus bus = null;
 
     /**
-     * @param billeterie
-     * @param arret
+     * @param billeterie: Où accheter son billet
+     * @param arret: Où attendre le bus
      */
     public Voyageur(String name, Billeterie billeterie, Arret arret) {
         super();
@@ -35,7 +34,7 @@ public class Voyageur extends Thread {
     @Override
     public void run() {
         //Acheter un billet
-        billeterie.prendreBillet();
+        billeterie.prendreBillet(this);
         //Se rendre à l'arrêt
         try {
             Thread.sleep(Voyageur.N);
