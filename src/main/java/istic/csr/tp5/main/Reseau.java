@@ -14,7 +14,7 @@ public class Reseau {
     public static final Billeterie BILLETERIE = new Billeterie();
 
     Reseau(Backend backend) {
-        /* Instanciation des bus */
+        /* Instantiation of bus */
         for (int i = 0; i < NB_BUS; i++) {
             backend.getBusDataStore().add(Reseau.ARRET);
         }

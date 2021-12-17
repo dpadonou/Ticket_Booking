@@ -22,7 +22,6 @@ public class BusDataStore {
         busMap.put(identifier, bus);
         bus.setDaemon(true);
         bus.start();
-        System.out.println("Un bus lancé.");
         identifier++;
     }
 
