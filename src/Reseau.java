@@ -31,6 +31,12 @@ public class Reseau {
 		}*/
 		for(int i=1;i<NB_VOYAGEUR;i++) {
 			voyageurs[i].start();
+			try {
+				voyageurs[i].join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		/*for(int i=1;i<NB_VOYAGEUR;i++) {
 			try {voyageurs[i].join();} catch (InterruptedException e) {e.printStackTrace();}
@@ -41,7 +47,7 @@ public class Reseau {
 
 	public static void main(String[] args) {
 			new Reseau();
-			System.out.println("Tous les voyageurs sont montés dans un bus");
+			System.out.println("Tous les voyageurs sont montï¿½s dans un bus");
 	}
 
 }

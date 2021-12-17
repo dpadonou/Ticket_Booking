@@ -32,14 +32,17 @@ public class Bus extends Thread {
 	
 	@Override
 	public void run() {
-		//Voyager
-		try {Thread.sleep(Bus.VOYAGE);} catch (InterruptedException e) {e.printStackTrace();}
-		//se garer
-		arret.stationner(this);
-		//stationner
-		try {Thread.sleep(Bus.STATIONNEMENT);} catch (InterruptedException e) {e.printStackTrace();}
-		//quitter l'arret
-		arret.quitterArret();
+		while(true) {
+			//Voyager
+			try {Thread.sleep(Bus.VOYAGE);} catch (InterruptedException e) {e.printStackTrace();}
+			//se garer
+			arret.stationner(this);
+			//stationner
+			try {Thread.sleep(Bus.STATIONNEMENT);} catch (InterruptedException e) {e.printStackTrace();}
+			//quitter l'arret
+			arret.quitterArret();
+		}
+		
 	}
 	
 	
